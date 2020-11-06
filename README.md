@@ -1,3 +1,18 @@
-# PincodeRangeEvaluator
+# Pin Code Challenge with Spring Boot
 
-A PincodeRangeEvaluator Service when sent a collection of 5-digit ZIP code ranges (each range includes both their upper and lower bounds), this service will produce the minimum number of ranges required to represent the same restrictions as the input.
+### Tech Stack
+Technologies used for current Task
+
+* [Java 1.8]
+* [Spring Boot, Spring Boot Web,embedded Tomcat Server]
+* [Maven]
+* [Swagger, Log 4j]
+
+### Rest Apis Info
+The following things illustrate Requests and Response:
+A post api which takes in list of  comma separate strings
+Containing the minimum and maximum pincodes respectively
+
+* [Request] : ["1,4","3,7","5,6","9,10"]
+* [Response] : ["1,7","9,10"]
+
