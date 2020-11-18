@@ -16,7 +16,7 @@ import com.challenge.pincode.exception.PincodeServiceException;
 import com.challenge.pincode.service.PincodeService;
 
 @RestController
-@RequestMapping("/pincodeApi")
+@RequestMapping("/pincode")
 public class PincodeController {
 
 	private static final Logger LOG = LogManager.getLogger(PincodeController.class.getName());
@@ -27,7 +27,7 @@ public class PincodeController {
 	@PostMapping("/calculateMinRanges")
 	public ResponseEntity<List<String>> calculateMinRanges(@RequestBody List<String> allPossibleRanges){
 		try {
-			LOG.info("/calculateMinRanges - > ");
+			LOG.info("/calculateMinRanges - > " + allPossibleRanges);
 			return new ResponseEntity<List<String>>(pincodeService.calculatePincodeMinRanges(allPossibleRanges), HttpStatus.OK);
 		} catch(PincodeServiceException e){
 			LOG.debug("Exception in calculateMinRanges method of PincodeController Class" + e.getMessage());

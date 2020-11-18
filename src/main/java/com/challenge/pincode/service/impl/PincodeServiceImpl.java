@@ -80,10 +80,11 @@ public class PincodeServiceImpl implements PincodeService{
 	}
 	
 	private static boolean checkIfValid(String pincode) throws PincodeServiceException{
-		if(!org.apache.commons.lang3.StringUtils.isNumeric(pincode)){
+		boolean pincodevalid = org.apache.commons.lang3.StringUtils.isNumeric(pincode);
+		if(!pincodevalid){
 			throw new PincodeServiceException(pincode+" is not a valid pincode and cannot be parsed to a number");
 		}
-		return org.apache.commons.lang3.StringUtils.isNumeric(pincode);
+		return pincodevalid;
 		
 		
 	}
